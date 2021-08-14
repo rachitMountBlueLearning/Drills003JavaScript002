@@ -8,10 +8,10 @@
 
 
 module.exports = {
-    reduce : (elements, cb, startingValue) => {
+    reduce : (elements, cb, startingValue, startingIndex = 0) => {
         if(elements instanceof Array){
-            let accumulator = startingValue || elements.shift() || [];
-            for(let index = 0; index < elements.length; index++) {
+            let accumulator = startingValue !== undefined ? startingValue : elements.shift() || [];
+            for(let index = startingIndex; index < elements.length; index++) {
                 accumulator = cb(accumulator, elements[index]);
             }
             return accumulator;
