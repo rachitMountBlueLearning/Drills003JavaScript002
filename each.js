@@ -8,9 +8,9 @@
 
 
 module.exports = {
-    each : (elements, cb) => {
+    each : (elements, cb, startingIndex = 0) => {
         if(elements instanceof Array){
-            for(let index = 0; index < elements.length; index++) {
+            for(let index = startingIndex; index < elements.length; index++) {
                 cb(elements[index], index);
             }
         }
