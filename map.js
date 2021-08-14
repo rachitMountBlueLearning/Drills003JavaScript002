@@ -9,7 +9,7 @@
 module.exports = {
     map : (elements, cb) => {
         if(elements instanceof Array){
-            mapped = [];
+            let mapped = [];
             for(let index = 0; index < elements.length; index++) {
                 mapped.push(cb(elements[index]));
             }
