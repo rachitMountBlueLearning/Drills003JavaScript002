@@ -7,10 +7,10 @@
 
 
 module.exports = {
-    map : (elements, cb) => {
+    map : (elements, cb, startingIndex = 0) => {
         if(elements instanceof Array){
-            let mapped = [];
-            for(let index = 0; index < elements.length; index++) {
+            const mapped = [];
+            for(let index = startingIndex; index < elements.length; index++) {
                 mapped.push(cb(elements[index]));
             }
             return mapped;
